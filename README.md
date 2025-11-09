@@ -6,33 +6,39 @@ En esta tarea aprendemos a automatizar la instalación y despliegue de una pila 
 ## Despliegue en local
 
 1. Clonar los archivos del [proyecto][1]
-2. Añadir permisos de ejecución a los scripts:
+2. Añadir permisos de ejecución a los scripts:<br>
     `chmod +x install-lamp.sh deploy.sh`
 3. (Opcional) Modificar archivo .env con datos personalizados
-4. Ejecutar archivo de instalación: `sudo ./install-lamp.sh`
-5. Ejecutar archivo de despliegue: `sudo ./deploy.sh`
-6. Comprobar funcionamiento: Ir a `http://localhost:80`
+4. Ejecutar archivo de instalación:<br>
+    `sudo ./install-lamp.sh`
+5. Ejecutar archivo de despliegue:<br>
+    `sudo ./deploy.sh`
+6. Comprobar funcionamiento en el navegador:<br>
+    Ir a `http://localhost:80`
 
 ## Despliegue en AWS EC2
 
 ### Configuración de la instancia:
-- **AMI:** Debian 12
-- **Tipo:** t2.micro
+- **AMI:** Debian 13
+- **Tipo:** t3.micro
 - **Security Group:** Puertos 22 (SSH), 80 (HTTP), 443 (HTTPS) abiertos
-- **IP Elástica:** [Tu IP aquí]
+- **IP Elástica:** [Tu IP elástica]
 
-### Pasos ejecutados:
+### Pasos a seguir:
 1. Crear instancia EC2 con Debian
-2. Configurar Security Group
-3. Asignar IP Elástica
+2. Configurar los grupos de seguridad
+3. Asignar una IP Elástica
 4. Conectar por SSH
 5. Clonar repositorio con scripts
-6. Ejecutar `install-lamp.sh`
-7. Ejecutar `deploy.sh`
-8. Verificar funcionamiento en navegador# Práctica LAMP 1 (local y en AWS)
+6. Ejecutar archivo de instalación:<br>
+    `sudo ./install-lamp.sh`
+7. Ejecutar archivo de despliegue:<br>
+    `sudo ./deploy.sh`
+8. Comprobar funcionamiento en el navegador:<br>
+    Ir a `http://localhost:80`
 
 
->***Notas sobre la práctica***
+>**~Notas sobre la práctica~**
 
 >- Se instala *mariadb-server* porque en Debian moderno, *mysql-server* ha sido reemplazado por el primero.
 
