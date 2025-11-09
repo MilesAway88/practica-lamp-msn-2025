@@ -32,25 +32,21 @@ En esta tarea aprendemos a automatizar la instalación y despliegue de una pila 
 8. Verificar funcionamiento en navegador# Práctica LAMP 1 (local y en AWS)
 
 
+>***Notas sobre la práctica***
 
-- Instalo mariadb-server porque en Debian moderno, mysql-server ha sido reemplazado por el primero.
+>- Se instala *mariadb-server* porque en Debian moderno, *mysql-server* ha sido reemplazado por el primero.
 
-- Al instalar mariadb-server, automáticamente instala mariadb-server y mariadb-cliente. Crea un enlace simbólico (mysql ---> mariadb)
+>- Al instalar *mariadb-server*, automáticamente instala también *mariadb-cliente*, y crea un enlace simbólico entre `mysql` y `mariadb`.
 
-- La instalación de MariaDB en Debian ya es segura, por lo que no hace falta usar mariadb-secure-installation.
+>- La instalación de MariaDB en Debian ya es segura, por lo que no hace falta usar `mariadb-secure-installation`.
 
-- El comando "2>/dev/null || true" sirve para que no muestre error en caso de darlo (que sería en segundas instalaciones porque root ya tendría contraseña)
+>- El comando `2>/dev/null || true` sirve para que no muestre un error, en caso de darlo, que sería en segundas instalaciones ya que *root* ya tendría contraseña.
 
-- No hace falta usar "a2enmod" con php en versiones modernas, ya que el módulo se habilita automáticamente al instalar "libapache2-mod-php"
+>- No hace falta usar `a2enmod` con PHP en versiones modernas, ya que el módulo se habilita automáticamente al instalar `libapache2-mod-php`.
 
-- No hace falta usar "a2ensite" ya que el archivo "000-default.conf" ya viene habilitado por defecto.
+>- No hace falta usar `a2ensite` ya que el archivo `000-default.conf` ya viene habilitado por defecto.
 
-- Hay que dar permisos de ejecución (dentro de la carpeta "scripts", ejecutar el comando "chmod +x install_lamp.sh deploy.sh")
-
-- Luego se ejecuta: sudo ./install_lamp.sh + sudo ./deploy.sh
-
-
-(BUSCAR lo de "sudo chown -R www-data:www-data /var/www/html" y "sudo chmod -R 755 /var/www/html")
+>- Hay que cambiar propietario y dar permisos a Apache para que pueda ejecutar los scripts (usuario *www-data*)
 
 
 [1]: https://github.com/MilesAway88/practica-lamp-msn-2025
