@@ -6,6 +6,9 @@ En esta tarea aprendemos a automatizar la instalación y despliegue de una pila 
 ## Despliegue en local
 
 1. Clonar los archivos del [proyecto][1]
+2. Añadir permisos de ejecución a los scripts
+    `chmod +x install-lamp.sh deploy.sh`
+3. 
 
 ## Despliegue en AWS EC2
 
@@ -47,4 +50,5 @@ En esta tarea aprendemos a automatizar la instalación y despliegue de una pila 
 (BUSCAR lo de "sudo chown -R www-data:www-data /var/www/html" y "sudo chmod -R 755 /var/www/html")
 
 
-[1]: https://github.com/MilesAway88/Despliegue-de-una-LAMP-sencilla
+[1]: https://github.com/MilesAway88/practica-lamp-msn-2025
+[2]: https://github.com/CarlesCanals/practica-lamp
