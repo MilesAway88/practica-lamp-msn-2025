@@ -40,19 +40,19 @@ En esta tarea aprendemos a automatizar la instalación y despliegue de una pila 
 ---
 
 >**<u>Notas sobre la práctica</u>**
-
+>
 >- Se instala *mariadb-server* porque en Debian moderno, *mysql-server* ha sido reemplazado por el primero.
-
+>
 >- Al instalar *mariadb-server*, automáticamente instala también *mariadb-cliente*, y crea un enlace simbólico entre `mysql` y `mariadb`.
-
+>
 >- La instalación de MariaDB en Debian ya es segura, por lo que no hace falta usar `mariadb-secure-installation`.
-
+>
 >- El comando `2>/dev/null || true` sirve para que no muestre un error, en caso de darlo, que sería en segundas instalaciones ya que *root* ya tendría contraseña.
-
+>
 >- No hace falta usar `a2enmod` con PHP en versiones modernas, ya que el módulo se habilita automáticamente al instalar `libapache2-mod-php`.
-
+>
 >- No hace falta usar `a2ensite` ya que el archivo `000-default.conf` ya viene habilitado por defecto.
-
+>
 >- Hay que cambiar propietario y dar permisos a Apache para que pueda ejecutar los scripts (usuario *www-data*)
 
 ---
