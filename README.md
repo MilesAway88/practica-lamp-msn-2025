@@ -37,8 +37,9 @@ En esta tarea aprendemos a automatizar la instalación y despliegue de una pila 
 8. Comprobar funcionamiento en el navegador:<br>
     Ir a `http://localhost:80`
 
+---
 
->**~Notas sobre la práctica~**
+>**<u>Notas sobre la práctica</u>**
 
 >- Se instala *mariadb-server* porque en Debian moderno, *mysql-server* ha sido reemplazado por el primero.
 
@@ -54,6 +55,11 @@ En esta tarea aprendemos a automatizar la instalación y despliegue de una pila 
 
 >- Hay que cambiar propietario y dar permisos a Apache para que pueda ejecutar los scripts (usuario *www-data*)
 
+---
+
+## Créditos
+En esta práctica se ha usado código basado en el repositorio [practica-lamp][2] de [@CarlesCanals][3]
 
 [1]: https://github.com/MilesAway88/practica-lamp-msn-2025
 [2]: https://github.com/CarlesCanals/practica-lamp
+[3]: https://github.com/CarlesCanals
