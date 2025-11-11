@@ -6,40 +6,65 @@ En esta tarea aprendemos a automatizar la instalación y despliegue de una pila 
 ## Despliegue en local
 
 1. Clonar los archivos del [proyecto][1]
+
 2. Añadir permisos de ejecución a los scripts:<br>
     `chmod +x install-lamp.sh deploy.sh`
+
 3. (Opcional) Modificar archivo .env con datos personalizados
+
 4. Ejecutar archivo de instalación:<br>
     `sudo ./install-lamp.sh`
+
 5. Ejecutar archivo de despliegue:<br>
     `sudo ./deploy.sh`
+
 6. Comprobar funcionamiento en el navegador:<br>
-    Ir a `http://localhost:80`
+    Ir a `http://localhost`
 
 ## Despliegue en AWS EC2
 
 ### Configuración de la instancia:
-- **AMI:** Debian 13
+- **AMI:** Debian 13 (fijarse en el **"Nombre de usuario"** al seleccionarlo)
 - **Tipo:** t3.micro
-- **Security Group:** Puertos 22 (SSH), 80 (HTTP), 443 (HTTPS) abiertos
-- **IP Elástica:** [Tu IP elástica]
+- **Par de claves:** Crear uno nuevo (RSA > .pem) o usar uno ya creado
+    **Se recomienda guardarlo en directorio *~/.ssh***
+- **Grupos de Seguridad:** Puertos 22 (SSH), 80 (HTTP), 443 (HTTPS) abiertos
+- **IP Elástica:** [Tu IP elástica] (se asignará más tarde)
 
 ### Pasos a seguir:
-1. Crear instancia EC2 con Debian
-2. Configurar los grupos de seguridad
-3. Asignar una IP Elástica
-4. Conectar por SSH
-5. Clonar repositorio con scripts
-6. Ejecutar archivo de instalación:<br>
+1. Crear instancia EC2 con Debian<br>
+    - **Importante:** Configurar bien los grupos de seguridad
+
+2. Asignar una IP Elástica:
+    - Menú lateral > Red y seguridad > Direcciones IP elásticas > Asignar dirección IP elástica
+    - **Importante:** Comprobar que realmente esté asignada a la instancia (pincha en la dirección IPv4)
+
+3. Conectar por SSH: <br>
+    - *Si tu usuario es "admin":* `ssh -i ~/.ssh/{TU_PAR_DE_CLAVES.PEM} admin@IP_ELASTICA`
+    - *Si tu usuario es "ec2-user":* `ssh -i ~/.ssh/{TU_PAR_DE_CLAVES.PEM} ec2-user@IP_ELASTICA`
+
+4. Clonar [repositorio][1]<br>
+    `git clone {url_repositorio}`
+
+5. (Opcional) Modificar el fichero *.env*
+    - **Importante:** Poner la IP elástica en la variable *SERVER_IP*
+
+6. Añadir permisos de ejecución a los scripts:<br>
+    `chmod +x install-lamp.sh deploy.sh`
+
+7. Ejecutar archivo de instalación:<br>
     `sudo ./install-lamp.sh`
-7. Ejecutar archivo de despliegue:<br>
+
+8. Ejecutar archivo de despliegue:<br>
     `sudo ./deploy.sh`
-8. Comprobar funcionamiento en el navegador:<br>
-    Ir a `http://localhost:80`
+
+9. Comprobar funcionamiento en el navegador:<br>
+    Ir a `http://{IP_ELASTICA}`
 
 ---
 
->**<u>Notas sobre la práctica</u>**
+>**Notas sobre la práctica**
+>---------------------------
 >
 >- Se instala *mariadb-server* porque en Debian moderno, *mysql-server* ha sido reemplazado por el primero.
 >
