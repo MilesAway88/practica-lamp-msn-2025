@@ -26,7 +26,7 @@ En esta tarea aprendemos a automatizar la instalación y despliegue de una pila 
 ### Configuración de la instancia:
 - **AMI:** Debian 13 (fijarse en el **"Nombre de usuario"** al seleccionarlo)
 - **Tipo:** t3.micro
-- **Par de claves:** Crear uno nuevo (RSA > .pem) o usar uno ya creado
+- **Par de claves:** Crear uno nuevo (RSA > .pem) o usar uno ya creado<br>
     **Se recomienda guardarlo en directorio *~/.ssh***
 - **Grupos de Seguridad:** Puertos 22 (SSH), 80 (HTTP), 443 (HTTPS) abiertos
 - **IP Elástica:** [Tu IP elástica] (se asignará más tarde)
@@ -39,11 +39,11 @@ En esta tarea aprendemos a automatizar la instalación y despliegue de una pila 
     - Menú lateral > Red y seguridad > Direcciones IP elásticas > Asignar dirección IP elástica
     - **Importante:** Comprobar que realmente esté asignada a la instancia (pincha en la dirección IPv4)
 
-3. Conectar por SSH: <br>
-    - *Si tu usuario es "admin":* `ssh -i ~/.ssh/{TU_PAR_DE_CLAVES.PEM} admin@IP_ELASTICA`
-    - *Si tu usuario es "ec2-user":* `ssh -i ~/.ssh/{TU_PAR_DE_CLAVES.PEM} ec2-user@IP_ELASTICA`
+3. Conectar por SSH: `ssh -i ~/.ssh/{TU_PAR_DE_CLAVES.PEM} {USUARIO}@{IP_ELASTICA}`
+    - *Si tu usuario es "admin":* `ssh -i ~/.ssh/{TU_PAR_DE_CLAVES.PEM} admin@{IP_ELASTICA}`
+    - *Si tu usuario es "ec2-user":* `ssh -i ~/.ssh/{TU_PAR_DE_CLAVES.PEM} ec2-user@{IP_ELASTICA}`
 
-4. Clonar [repositorio][1]<br>
+4. Clonar [repositorio][1]:<br>
     `git clone {url_repositorio}`
 
 5. (Opcional) Modificar el fichero *.env*
