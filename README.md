@@ -27,9 +27,9 @@ En esta tarea aprendemos a automatizar la instalación y despliegue de una pila 
 - **AMI:** Debian 13 (fijarse en el **"Nombre de usuario"** al seleccionarlo)
 - **Tipo:** t3.micro
 - **Par de claves:** Crear uno nuevo (RSA > .pem) o usar uno ya creado<br>
-    **Se recomienda guardarlo en directorio *~/.ssh***
+    - *Se recomienda guardarlo en directorio **~/.ssh***
 - **Grupos de Seguridad:** Puertos 22 (SSH), 80 (HTTP), 443 (HTTPS) abiertos
-- **IP Elástica:** [Tu IP elástica] (se asignará más tarde)
+- **IP Elástica:** [Tu IP elástica] (se asignará después)
 
 ### Pasos a seguir:
 1. Crear instancia EC2 con Debian<br>
